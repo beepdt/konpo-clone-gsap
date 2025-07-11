@@ -56,15 +56,15 @@ h2 {
 a,
 p {
   font-family: "Montreal";
-  text-decoration: none;
+  
   line-height: 1;
   overflow: hidden;
 }
 
 .hero {
   position: relative;
-  width: 100%;
-  height: 100svh;
+  
+  height: 100vh;
   display: block;
   overflow: hidden;
 }
@@ -80,7 +80,6 @@ p {
   transform: scaleY(0%);
   z-index: -999;
   pointer-events: none;
-  
 }
 
 .counter {
@@ -116,7 +115,7 @@ p {
   right: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+ 
   pointer-events: none;
 }
 
@@ -124,12 +123,16 @@ p {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 20%;
+  width: 25%;
   aspect-ratio: 5/3;
   border-radius: 0.8rem;
   overflow: hidden;
   will-change: transform, height;
   /* Ensure images stay within viewport bounds */
+}
+
+.img figure {
+  aspect-ratio: 5/3;
 }
 
 .images-container .img.animate-out {
@@ -165,8 +168,6 @@ p {
   transform: translateY(125%);
   will-change: transform;
 }
-
-
 
 .site-info .divider {
   position: absolute;
@@ -205,26 +206,37 @@ p {
   margin-left: 5rem;
 }
 
-.copy-divider{
+.copy-divider {
   transform-origin: left;
   transform: scaleX(0%);
 }
 
-.menu-divider{
+.menu-divider {
   display: none;
 }
 
+.slider {
+  user-select: none;
+  cursor: grab;
+  overflow: visible;
+}
+
+
+
 .carousel-reel {
+  white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
   width: 100%;
   height: 100%;
+  min-height: 336px;
   gap: 0.5rem;
   display: flex;
   padding: 0rem;
   flex-direction: row;
   flex-wrap: nowrap;
   padding-left: 1rem;
+  pointer-events: none;
 }
 
 .carousel-reel img {
@@ -232,19 +244,26 @@ p {
   height: 100%;
   object-fit: cover;
   pointer-events: none;
- 
-  
 }
 
 .carousel-item {
-  aspect-ratio: 16 / 9;
-  height: auto;            /* Maintain 3:2 ratio (can adjust) */
-  max-width: 420px; 
+  aspect-ratio: 5 / 4;
+  max-width: 420px;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 1.2rem;
   display: flex;
-  flex: 0 0 auto;
+  flex: 0 0 420;
+  pointer-events: none;
 }
+
+.carousel-item figure {
+  position: relative;
+  width: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+
 
 .proxy {
   position: absolute;
@@ -257,61 +276,136 @@ p {
 
 .wrapper {
   position: relative;
-  background-image: radial-gradient(#b1b0b0 1px, transparent 1px);
+  background-image: radial-gradient(#b6b4b4 1px, transparent 1px);
   background-size: 16px 16px;
   transform-origin: left;
   transform: scaleX(0%);
+  overflow: hidden;
 }
 
-@media(max-width:640px){
+
+/*Vision Page*/
+.vision {
+  min-height: 100vh;
+  display: block;
+  overflow: hidden;
+}
+
+.vision-bg {
+  position: relative;
+  width: 100%;
+  background-image: radial-gradient(#b6b4b4 1px, transparent 1px);
+  background-size: 16px 16px;
+  overflow: hidden;
+}
+
+.first_pin {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-line {
+  display: block;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+}
+
+.split-word {
+  display: inline-block;
+   align-items: center;
+  justify-content: center;
+}
+
+.split-char {
+  display: inline-block;
+  transition: color 0.3s ease;
+   
+}
+
+.texte_split {
+  font-family: 'Montreal';
+  letter-spacing: -0.1rem;
+  line-height: 1.1;
+  max-width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.svg-icons img {
+  max-width: 10%;
+  object-fit: contain;
+}
+
+
+@media (max-width: 640px) {
   .sidebar {
     display: none;
   }
-  .menu-divider{
+  .menu-divider {
     display: block;
-  transform-origin: top;
-  transform: scaleY(0%);
-}
+    transform-origin: top;
+    transform: scaleY(0%);
+  }
 
-  .logo-name{
+  .logo-name {
     display: none;
   }
 
   .carousel-divider {
-  transform-origin: left;
-  transform: scaleX(0%);
-  margin-left: 0rem;
-}
+    transform-origin: left;
+    transform: scaleX(0%);
+    margin-left: 0rem;
+  }
 
   .images-container .img {
-  position: absolute;
-  left: 50%;
-  width: 40%;
-  transform: translate(-50%);
-  aspect-ratio: 5/3;
-  border-radius: 0.8rem;
-  overflow: hidden;
-  will-change: transform, height;
-  /* Ensure images stay within viewport bounds */
+    position: absolute;
+    left: 50%;
+    width: 40%;
+    transform: translate(-50%);
+    aspect-ratio: 5/3;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    will-change: transform, height;
+    /* Ensure images stay within viewport bounds */
+  }
+
+  .images-container .img.animate-out {
+    z-index: 0;
+    top: unset;
+    bottom: 6rem;
+    overflow: hidden;
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .carousel-item {
+    aspect-ratio: 1 / 1;
+    height: auto; /* Maintain 3:2 ratio (can adjust) */
+    width: 240px;
+    max-height: 240px;
+    overflow: hidden;
+    border-radius: 12px;
+    display: flex;
+    flex: 0 0 auto;
+  }
+
+  .carousel-reel {
+    min-height: 260px;
+  }
+  .wrapper {
+    min-height: 260px;
+  }
+
+  .texte_split {
+    max-width: 95%;
+  }
+
+  .svg-icons img {
+  max-width: 20%;
+  object-fit: contain;
+}
 }
 
-.images-container .img.animate-out {
-  z-index: 0;
-  top: unset;
-  bottom: 6rem;
-  overflow: hidden;
-  left: 50%;
-  transform: translate(-50%);
-}
 
-.carousel-item {
-  aspect-ratio: 1 / 1;
-  height: auto;            /* Maintain 3:2 ratio (can adjust) */
-  max-width: 240px; 
-  overflow: hidden;
-  border-radius: 12px;
-  display: flex;
-  flex: 0 0 auto;
-}
-
-}

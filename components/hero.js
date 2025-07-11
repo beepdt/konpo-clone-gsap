@@ -1,15 +1,9 @@
 "use client";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Draggable } from "gsap/Draggable";
-import { useGSAP } from "@gsap/react";
-import { useRef } from "react";
-gsap.registerPlugin(ScrollTrigger, Draggable, useGSAP);
 
-export default function Hero({ scrollRef, proxyRef, carouselRef }) {
+export default function Hero() {
   return (
-    <div className="hero">
-      <div className="space-y-4 md:space-y-12">
+    <div className="hero ">
+      <div className="space-y-0 md:space-y-0">
         {/* This is the hero info section with a grid layout */}
         <div className="grid grid-cols-1 sm:grid-cols-3 justify-center md:min-h-[420px] pt-8 mx-4 md:ml-[7rem] justify-between">
           <div className="header md:space-y-0 sm:col-span-2">
@@ -17,7 +11,7 @@ export default function Hero({ scrollRef, proxyRef, carouselRef }) {
               <span>Capturing</span>
               <span className="text-blue-500">Memories</span>
             </h1>
-            <h1 className="text-[3.8rem] lg:text-[5rem] leading-none font-bold md:pb-12">
+            <h1 className="text-[3.8rem] lg:text-[5rem] leading-none font-bold md:pb-12 max-w-[80%]">
               across time
             </h1>
             <h2 className="text-[1.2rem] lg:text-[1.5rem] leading-none hidden sm:flex">
@@ -45,49 +39,72 @@ export default function Hero({ scrollRef, proxyRef, carouselRef }) {
             </div>
           </div>
         </div>
-        <div className="border-b w-full carousel-divider"></div>
-        <div className="min-h-[240px] md:ml-[5rem] py-8 wrapper opacity-0 ">
-          <div className="carousel-reel min-h-[240px] "></div>
-          <div className="proxy"></div>
+        <div className="border-b w-full carousel-divider md:mt-8 mb-4"></div>
+        <div className=" md:ml-[5rem] py-4 md:py-4  wrapper opacity-0 slider ">
+          <div className="carousel-reel  px-4"></div>
         </div>
       </div>
 
       <div className="images-container">
         <div className="img">
-          <img src="/img1.jpg" />
+          <figure>
+            <img src="/img1.jpg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img2.jpg" />
+          <figure>
+            <img src="/img2.jpg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img3.jpg" />
+          <figure>
+            <img src="/img3.jpg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img4.jpeg" />
+          <figure>
+            <img src="/img4.jpeg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img5.jpg" />
+          <figure>
+            <img src="/img5.jpg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img6.jpg" />
+          <figure>
+            <img src="/img6.jpg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img7.png" />
+          <figure>
+            <img src="/img7.png" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img8.jpg" />
+          <figure>
+            <img src="/img8.jpg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img9.jpeg" />
+          <figure>
+            <img src="/img9.jpeg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img10.jpeg" />
+          <figure>
+            <img src="/img10.jpeg" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img11.png" />
+          <figure>
+            <img src="/img11.png" />
+          </figure>
         </div>
         <div className="img">
-          <img src="/img12.png" />
+          <figure>
+            <img src="/img12.png" />
+          </figure>
         </div>
       </div>
     </div>
