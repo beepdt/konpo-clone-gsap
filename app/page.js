@@ -5,25 +5,32 @@ import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import { SplitText } from "gsap/SplitText";
 import { Draggable } from "gsap/Draggable";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import Hero from "@/components/hero";
 import Copy from "@/components/Copy";
 import { Menu } from "lucide-react";
 import Vision from "@/components/vision";
 import animations from "@/components/page-func";
-gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable);
+import Lenis from "lenis";
+import { ReactLenis, useLenis } from "lenis/react";
+import Footer from "@/components/Footer";
+gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable, ScrollTrigger);
 
 //DragScrollClass
 
 //Page
 export default function Home() {
   const sidebarRef = useRef(null);
+  const lenis = useLenis(({scoll})=>{})
 
-  //dragscroll Animation
   animations();
 
+  
+
   return (
-    <div className="">
+    <ReactLenis as root>
+      <div className="max-w-screen relative">
       <div ref={sidebarRef} className="sidebar">
         <div className="divider"></div>
       </div>
@@ -61,12 +68,17 @@ export default function Home() {
         <div className="counter-3 digit"></div>
       </div>
 
-      <div className="flex flex-col">
+      <div  className="flex flex-col relative">
         <Hero />
 
         <Vision />
-        <div className="selected-works"></div>
+
+        <div className="Footer">
+          <Footer/>
+        </div>
       </div>
     </div>
+    </ReactLenis>
+    
   );
 }

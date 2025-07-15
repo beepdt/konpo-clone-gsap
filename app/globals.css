@@ -25,6 +25,11 @@ body {
   font-family: "Montreal";
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 @font-face {
   font-family: "Unagao";
   src: url("/fonts/Unageo[wght].ttf") format("truetype");
@@ -56,14 +61,14 @@ h2 {
 a,
 p {
   font-family: "Montreal";
-  
+
   line-height: 1;
   overflow: hidden;
 }
 
 .hero {
   position: relative;
-  
+
   height: 100vh;
   display: block;
   overflow: hidden;
@@ -115,7 +120,7 @@ p {
   right: 0;
   width: 100%;
   height: 100%;
- 
+
   pointer-events: none;
 }
 
@@ -221,8 +226,6 @@ p {
   overflow: visible;
 }
 
-
-
 .carousel-reel {
   white-space: nowrap;
   overflow-x: scroll;
@@ -263,8 +266,6 @@ p {
   overflow: visible;
 }
 
-
-
 .proxy {
   position: absolute;
   visibility: hidden;
@@ -283,7 +284,6 @@ p {
   overflow: hidden;
 }
 
-
 /*Vision Page*/
 .vision {
   min-height: 100vh;
@@ -297,6 +297,8 @@ p {
   background-image: radial-gradient(#b6b4b4 1px, transparent 1px);
   background-size: 16px 16px;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 
 .first_pin {
@@ -314,18 +316,17 @@ p {
 
 .split-word {
   display: inline-block;
-   align-items: center;
+  align-items: center;
   justify-content: center;
 }
 
 .split-char {
   display: inline-block;
   transition: color 0.3s ease;
-   
 }
 
 .texte_split {
-  font-family: 'Montreal';
+  font-family: "Montreal";
   letter-spacing: -0.1rem;
   line-height: 1.1;
   max-width: 90%;
@@ -338,6 +339,43 @@ p {
   object-fit: contain;
 }
 
+/*Sticky-Cards*/
+.sticky-cards {
+  height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sticky-cards-container {
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.sticky-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 2rem;
+  
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #e9fbff;
+  border: #0a0a0a 1px solid;
+}
+
+.sticky-card img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
 
 @media (max-width: 640px) {
   .sidebar {
@@ -403,9 +441,14 @@ p {
   }
 
   .svg-icons img {
-  max-width: 20%;
-  object-fit: contain;
-}
-}
+    max-width: 20%;
+    object-fit: contain;
+  }
 
-
+  .sticky-cards-container {
+    width: 90%;
+  }
+  .sticky-card img {
+    aspect-ratio: 1/1;
+  }
+}

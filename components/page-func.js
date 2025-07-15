@@ -4,8 +4,11 @@ import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
 import { SplitText } from "gsap/SplitText";
 import { Draggable } from "gsap/Draggable";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 import { useRef } from "react";
-gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable);
+import Lenis from "lenis";
+import { ReactLenis, useLenis } from 'lenis/react'
+gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable, ScrollTrigger);
 
 const lerp = (f0, f1, t) => (1 - t) * f0 + t * f1;
 const clamp = (val, min, max) => Math.max(min, Math.min(val, max));
@@ -83,7 +86,7 @@ class DragScroll {
 
     // Calculate maxScroll with extra padding after last item
     const containerWidth = this.el.clientWidth;
-    const extraPadding = 210; // pixels of space after last item
+    //const extraPadding = 210; // pixels of space after last item
     this.maxScroll = Math.max(0, this.wrapWidth - containerWidth);
   }
 
@@ -276,6 +279,8 @@ class DragScroll {
 export default function animations () {
   const scrollInstanceRef = useRef(null);
   const animationFrameRef = useRef(null);
+
+  const lenis = useLenis(({scroll}) => {});
 
   const disableScroll = () => {
     document.body.style.overflow = "hidden";
