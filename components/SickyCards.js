@@ -86,7 +86,7 @@ export default function StickyCards() {
         {/*Sticky cards start */}
         <div className="sticky-card">
           <div className="sticky-tag  flex">
-            <div className="space-y-[1rem] md:space-y-[2rem] flex-2">
+            <div className="space-y-[1rem] md:space-y-[2rem]  flex-2">
               <h1 className="text-[2.8rem] lg:text-[8rem]">Brand Shoot</h1>
               <p className="text-[1.2rem] lg:text-[2rem]">
                 We lay a strong foundation for companies through strategy and
@@ -140,7 +140,7 @@ export default function StickyCards() {
         </div>
         <div className="sticky-card">
           <div className="sticky-tag  flex">
-            <div className="space-y-[1rem] md:space-y-[2rem] flex-2">
+            <div className="space-y-[1rem] md:space-y-[2rem] justify-between flex-2">
               <h1 className="text-[2.8rem] lg:text-[8rem]">Brand Shoot</h1>
               <p className="text-[1.2rem] lg:text-[2rem]">
                 We lay a strong foundation for companies through strategy and

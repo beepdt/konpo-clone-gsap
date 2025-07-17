@@ -7,6 +7,7 @@ import { SplitText } from "gsap/SplitText";
 import { Draggable } from "gsap/Draggable";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 import Hero from "@/components/hero";
 import Copy from "@/components/Copy";
 import { Menu } from "lucide-react";
@@ -23,7 +24,7 @@ gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable, ScrollTrigger);
 export default function Home() {
   const sidebarRef = useRef(null);
   const lenis = useLenis(({scoll})=>{})
-
+  const router = useRouter()
   animations();
 
   
@@ -47,8 +48,10 @@ export default function Home() {
             </div>
           </div>
           <div className="space-x-4 sm:space-x-8 flex nav-items items-center">
-            <div className="links bg-black text-background md:bg-transparent md:text-foreground rounded-2xl opacity-0 px-4 py-2 md:opacity-1 md:px-0 md:py-0">
-              <p>Gallery</p>
+            <div 
+            onClick={()=> router.push('./gallery')}
+            className="links bg-black hover:underline cursor-pointer hover:text-gray-400 text-background md:bg-transparent md:text-foreground rounded-2xl opacity-0 px-4 py-2 md:opacity-1 md:px-0 md:py-0">
+              <p className="hover:underline">Gallery</p>
             </div>
             <div className="hidden cta sm:flex bg-black text-background rounded-full opacity-0 px-4 py-2">
               <p className="text-[1.2rem]">Contact Me</p>
