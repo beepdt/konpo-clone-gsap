@@ -121,10 +121,7 @@ export default function InteractiveDotGrid({
         <h3>Dot Grid Controls</h3>
       </div>
       <div className="controls-content">
-        <Slider value={radius} onChange={setRadius} min={50} max={300} step={10} label="Effect Radius" />
-        <Slider value={dotSize} onChange={setDotSize} min={1} max={8} step={0.5} label="Base Dot Size" />
-        <Slider value={maxScale} onChange={setMaxScale} min={1} max={5} step={0.1} label="Max Scale" />
-        <Slider value={dotSpacing} onChange={setDotSpacing} min={15} max={50} step={5} label="Dot Spacing" />
+        
         <div className="usage-info">
           <p>
             <strong>How to use:</strong>

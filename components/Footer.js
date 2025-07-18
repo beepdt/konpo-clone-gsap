@@ -46,7 +46,7 @@ export default function Footer() {
         <CopyChars delay={0.5}>
           <RunawayText>
             <h1 className="text-[3.2rem]   lg:text-[10rem] pl-4 md:px-[16rem] items-center justify-center ">
-              Let's Connect
+              Let&rsquo;s Connect
             </h1>
           </RunawayText>
         </CopyChars>
@@ -93,7 +93,7 @@ export default function Footer() {
                   </Link>
                   <span className="text-gray-700">
                     {" "}
-                    and we'll get back to you!
+                    and we&rsquo;ll get back to you!
                   </span>
                 </p>
               </div>

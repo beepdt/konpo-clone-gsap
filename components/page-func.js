@@ -275,7 +275,7 @@ class DragScroll {
   }
 }
 
-export default function animations () {
+export  function useAnimations () {
   const scrollInstanceRef = useRef(null);
   const animationFrameRef = useRef(null);
 

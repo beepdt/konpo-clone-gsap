@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 import Hero from "@/components/hero";
 import { Menu } from "lucide-react";
 import Vision from "@/components/vision";
-import animations from "@/components/page-func";
+import { useAnimations } from "@/components/page-func";
 import { ReactLenis, useLenis } from "lenis/react";
 import Footer from "@/components/Footer";
 gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable, ScrollTrigger);
@@ -22,7 +22,7 @@ export default function Home() {
   const sidebarRef = useRef(null);
   const lenis = useLenis(({scoll})=>{})
   const router = useRouter()
-  animations();
+  useAnimations()
 
   
 
