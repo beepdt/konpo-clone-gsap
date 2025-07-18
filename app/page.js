@@ -47,10 +47,10 @@ export default function Home() {
           <div className="space-x-4 sm:space-x-8 flex nav-items items-center">
             <div 
             onClick={()=> router.push('./gallery')}
-            className="links bg-black hover:underline cursor-pointer hover:text-gray-400 text-background md:bg-transparent md:text-foreground rounded-2xl opacity-0 px-4 py-2 md:opacity-1 md:px-0 md:py-0">
+            className="links bg-black hover:underline cursor-pointer hover:text-gray-400 text-background md:bg-transparent md:text-white rounded-2xl opacity-0 px-4 py-2 md:opacity-1 md:px-0 md:py-0">
               <p className="hover:underline">Gallery</p>
             </div>
-            <div className="hidden cta sm:flex bg-black text-background rounded-full opacity-0 px-4 py-2">
+            <div className="hidden cta sm:flex bg-black text-white rounded-full opacity-0 px-4 py-2">
               <p className="text-[1.2rem]">Contact Me</p>
             </div>
           </div>
