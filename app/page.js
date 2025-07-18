@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Flip } from "gsap/Flip";
@@ -9,11 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import Hero from "@/components/hero";
-import Copy from "@/components/Copy";
 import { Menu } from "lucide-react";
 import Vision from "@/components/vision";
 import animations from "@/components/page-func";
-import Lenis from "lenis";
 import { ReactLenis, useLenis } from "lenis/react";
 import Footer from "@/components/Footer";
 gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable, ScrollTrigger);

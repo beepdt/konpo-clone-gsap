@@ -6,8 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import { Draggable } from "gsap/Draggable";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import { useRef } from "react";
-import Lenis from "lenis";
-import { ReactLenis, useLenis } from 'lenis/react'
+import { useLenis } from 'lenis/react'
 gsap.registerPlugin(useGSAP, Flip, SplitText, Draggable, ScrollTrigger);
 
 const lerp = (f0, f1, t) => (1 - t) * f0 + t * f1;
